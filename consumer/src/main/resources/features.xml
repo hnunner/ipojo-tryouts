@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0">
+
+    <!-- features:addUrl mvn:com.adviser.ipojo.tryouts/ipojo-tryouts-consumer/${project.version}/xml -->
+
+    <repository>http://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.ipojo.features/${ipojo.version}/org.apache.felix.ipojo.features-${ipojo.version}.xml</repository>
+    <repository>mvn:com.adviser.ipojo.tryouts/ipojo-tryouts-services-interfaces/${project.version}/xml</repository>
+
+    <feature name='com.adviser.ipojo.tryouts.consumer' version='${project.version}'>
+        <feature version="${ipojo.version}">ipojo-all</feature>
+        <feature version="${project.version}">com.adviser.ipojo.tryouts.services.interfaces</feature>
+        <bundle>mvn:com.adviser.ipojo.tryouts/ipojo-tryouts-consumer/${project.version}</bundle>
+    </feature>
+
+</features>
