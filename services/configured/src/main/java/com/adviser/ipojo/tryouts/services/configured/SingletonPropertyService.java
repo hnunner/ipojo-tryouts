@@ -20,6 +20,7 @@ import com.adviser.ipojo.tryouts.services.interfaces.PropertyService;
 @Instantiate
 @Provides
 public class SingletonPropertyService implements PropertyService {
+//public class SingletonPropertyService extends AbstractPropertyService {
 
     @ServiceProperty(value = "singleton")
     private String type;

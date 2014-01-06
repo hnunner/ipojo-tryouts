@@ -24,10 +24,12 @@ public class Consumer implements Runnable {
     /** singleton property service */
     @Requires(filter="(type=singleton)")
     private PropertyService[] singletonServices;
+//    private AbstractPropertyService[] singletonServices;
 
     /** multiton property service */
     @Requires(filter="(type=multiton)")
     private PropertyService[] multitonServices;
+//    private AbstractPropertyService[] multitonServices;
 
     /** thread status */
     private boolean stopped;
@@ -84,6 +86,7 @@ public class Consumer implements Runnable {
      *          the description of the given services
      */
     private void logServices(PropertyService[] services, String serviceDescription) {
+//    private void logServices(AbstractPropertyService[] services, String serviceDescription) {
         StringBuilder sb = new StringBuilder("\n");
         if (services == null) {
             sb.append("no ").append(serviceDescription).append(" service injections");
@@ -92,6 +95,7 @@ public class Consumer implements Runnable {
         } else {
             sb.append(serviceDescription).append(" services #").append(services.length).append(" --> ");
             for (PropertyService service : services) {
+//            for (AbstractPropertyService service : services) {
                 sb.append(service.toString()).append(" property:").append(service.getProperty()).append(", ");
             }
         }

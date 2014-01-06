@@ -17,6 +17,7 @@ import com.adviser.ipojo.tryouts.services.interfaces.PropertyService;
 @Component(name="PropertyService.Multiton")  // instantiation via [karaf_home]/etc/PropertyService.Default[suffix].cfg files
 @Provides
 public class MultitonPropertyService implements PropertyService {
+//public class MultitonPropertyService extends AbstractPropertyService {
 
     @ServiceProperty(value = "multiton")
     private String type;
